@@ -2,16 +2,12 @@ import {Module} from '@nestjs/common';
 import {AuthController} from './controllers/auth.controller';
 import {AuthService} from './services/auth.service';
 import {PrismaService} from "../../core/prisma/prisma.service";
-import {JwtModule} from "@nestjs/jwt";
-import {JwtStrategy} from "../../core/auth/jwt.strategy";
+import {JwtModule, JwtService} from "@nestjs/jwt";
 
 @Module({
-    imports: [JwtModule.register({
-        secret: 'your-secret-key', // Aynı gizli anahtarı burada da belirtin
-        signOptions: {expiresIn: '1h'}, // İsteğe bağlı: Token süresi
-    }),],
+    imports: [JwtModule],
     controllers: [AuthController],
-    providers: [AuthService, PrismaService, JwtStrategy]
+    providers: [AuthService, PrismaService,JwtService]
 })
 export class AuthModule {
 }
