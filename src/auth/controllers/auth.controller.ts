@@ -2,7 +2,7 @@ import {Body, Controller, NotFoundException, Post, UnauthorizedException} from '
 import {AuthService} from "../services/auth.service";
 import {UserModel} from "../models/auth.model-dto";
 import {ApiTags} from "@nestjs/swagger";
-import {JwtPayload} from "../../../core/auth/jwt-payload.interface";
+import {JwtPayload} from "core/auth/jwt-payload.interface";
 import {JwtService} from "@nestjs/jwt";
 
 @Controller('')

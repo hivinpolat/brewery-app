@@ -1,7 +1,6 @@
+FROM node:18
 
-FROM node:18-alpine
-
-WORKDIR /src
+WORKDIR /app
 
 COPY package*.json ./
 
@@ -9,4 +8,6 @@ RUN npm install
 
 COPY . .
 
-CMD [ "npm", "start" ]
+RUN npm run build
+
+CMD ["node", "dist/main"]

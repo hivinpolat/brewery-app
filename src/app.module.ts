@@ -1,10 +1,10 @@
 import {Module, MiddlewareConsumer} from '@nestjs/common';
 import {AuthModule} from './auth/auth.module';
 import {BreweryModule} from './brewery/brewery.module';
-import {LoggingMiddleware} from "../core/middleware/logging.middleware";
-import {AuthMiddleware} from "../core/middleware/auth.middleware";
+import {LoggingMiddleware} from "core/middleware/logging.middleware";
+import {AuthMiddleware} from "core/middleware/auth.middleware";
 import {JwtModule, JwtService} from "@nestjs/jwt";
-import {PrismaService} from "../core/prisma/prisma.service";
+import {PrismaService} from "core/prisma/prisma.service";
 import {AuthService} from "./auth/services/auth.service";
 import {ConfigModule} from "@nestjs/config";
 
